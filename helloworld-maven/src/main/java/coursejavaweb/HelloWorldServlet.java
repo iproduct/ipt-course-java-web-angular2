@@ -48,7 +48,7 @@ public class HelloWorldServlet extends HttpServlet {
 		out.println("<html><head><title>Hello World</title>"
 				+ "<meta charset='UTF-8'></head>"); 
 		out.println("<body>");
-		out.println("<h1>Çäðàâåé World, from Java Servlet 3.1!</h1>");
+		out.println("<h1>Ð—Ð´Ñ€Ð°Ð²ÐµÐ¹ World, from Java Servlet 3.1!</h1>");
 		out.println("<h2>Served at: " + request.getContextPath() + "</h2>");
 		out.println("</body></html>");
 	}
