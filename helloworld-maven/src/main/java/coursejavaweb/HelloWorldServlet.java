@@ -16,12 +16,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class HelloWorldServlet
  */
 @WebServlet(
-		urlPatterns = { "/hello" }, 
-		initParams = { 
-				@WebInitParam(name = "name", value = "Trayan", description = "My name")
-		})
+	urlPatterns = { "/hello" }, 
+	initParams = { 
+		@WebInitParam(name = "myname", value = "Trayan", description = "My name")
+	})
 public class HelloWorldServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String name;
 
     /**
      * Default constructor. 
@@ -34,7 +35,8 @@ public class HelloWorldServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		name = config.getInitParameter("myname");
+		System.out.println("Init() called.");
 	}
 
 	/**
@@ -48,7 +50,7 @@ public class HelloWorldServlet extends HttpServlet {
 		out.println("<html><head><title>Hello World</title>"
 				+ "<meta charset='UTF-8'></head>"); 
 		out.println("<body>");
-		out.println("<h1>Здравей World, from Java Servlet 3.1!</h1>");
+		out.println("<h1>Здравей " + name + ", from Java Servlet 3.1!</h1>");
 		out.println("<h2>Served at: " + request.getContextPath() + "</h2>");
 		out.println("</body></html>");
 	}
