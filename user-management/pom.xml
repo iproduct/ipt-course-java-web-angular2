@@ -6,7 +6,7 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>User Management Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<url>iproduct.org</url>
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -22,7 +22,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>helloworld</finalName>
+		<finalName>usermanager</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -50,8 +50,8 @@
 						</configuration>
 						<deployables>
 							<deployable>
-								<groupId>com.iproduct</groupId>
-								<artifactId>ROOT</artifactId>
+								<groupId>java-web-demos</groupId>
+								<artifactId>user-management</artifactId>
 								<type>war</type>
 								<properties>
 									<context>${project.build.finalName}</context>
