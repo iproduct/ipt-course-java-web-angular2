@@ -2,6 +2,8 @@ package bookstore.manager.jsf.beans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean(name="user")
 @SessionScoped
@@ -28,7 +30,15 @@ public class LoggedUserBean {
 	}
 	@Override
 	public String toString() {
-		return "LoggedUser [username=" + username + ", screenname="
+		return "LoggedUserBean [username=" + username + ", screenname="
 				+ screenname + "]";
+	}
+	
+	public String logout() {
+		HttpSession session = (HttpSession)FacesContext.getCurrentInstance()
+			.getExternalContext().getSession(false);
+		if(session != null)
+			session.invalidate();
+		return "logout";
 	}
 }

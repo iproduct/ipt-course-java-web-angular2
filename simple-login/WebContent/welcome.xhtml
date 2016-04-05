@@ -11,7 +11,14 @@
 	    Bookstore Manager Home
 	</ui:define>
 	<ui:define name="content">
-		<h1>Welcome, <h:outputText value="#{user.screenname}"/> to Bookstore Manager Application</h1>
+		<h:form>
+			<h1>
+				Welcome,
+				<h:outputText value="#{user.screenname}" />
+				to Bookstore Manager Application
+			</h1>
+			<h:commandLink action="#{user.logout}">Logout</h:commandLink>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>

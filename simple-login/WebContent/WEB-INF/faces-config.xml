@@ -13,6 +13,12 @@
 			<to-view-id>/welcome.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	<!-- <managed-bean>
 		<managed-bean-name>loginBean</managed-bean-name>
 		<managed-bean-class>bookstore.manager.jsf.beans.LoginBean</managed-bean-class>
