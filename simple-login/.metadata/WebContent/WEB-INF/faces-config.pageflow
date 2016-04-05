@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14597066664931" configfile="/BookstoreJSF/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14597066664931" configfile="/simple-login/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="562" y="230" id="pf14597100952562" inlinks="pf14597100952563" path="/welcome.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="312" y="230" id="pf14597100952564" outlinks="pf14597100952563" path="/login.xhtml"/>
-  <links id="pf14597100952563" target="pf14597100952562" source="pf14597100952564" outcome="success"/>
+  <links id="pf14597100952563" target="pf14597100952562" source="pf14597100952564"/>
 </pageflow:Pageflow>
