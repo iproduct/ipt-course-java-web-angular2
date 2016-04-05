@@ -4,6 +4,7 @@ import static usermanager.model.UserRole.*;
 import java.io.Serializable;
 
 public class User implements Comparable<User>, Serializable{
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String username;
 	private String realName;
