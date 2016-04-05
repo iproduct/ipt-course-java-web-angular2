@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:my="http://java.sun.com/jsf/composite/custom">
+<h:head>
+    <title>Custom Component Example</title>
+</h:head>
+<h:body><h1>Custom Component Example</h1>
+    <h:outputStylesheet name="css/main.css"/>
+        <h:form id="form1">
+            <h:messages/>
+            <h:panelGrid columns="2">
+            <my:custom value="#{demo1.number}" inc="5" id="demo1" />
+            <h:outputText value="Result: #{demo1.number}" />
+            </h:panelGrid>
+            <h:commandButton value="submit" />
+        </h:form>
+</h:body>
+</html>

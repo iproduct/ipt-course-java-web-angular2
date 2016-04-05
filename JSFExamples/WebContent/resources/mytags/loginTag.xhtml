@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+<body>
+	<composite:interface>
+		<composite:attribute name="username" required="true"
+			type="java.lang.String" />
+		<composite:attribute name="password" required="true"
+			type="java.lang.String" />
+		<composite:attribute name="action" targets="login_form:login_command"
+			method-signature="java.lang.String f()"/>
+		<composite:attribute name="styleClass" type="java.lang.String" 
+			default="login_form"/>
+		<composite:attribute name="caption" type="java.lang.String" default="Login"/>
+		<composite:attribute name="usernameLabel" type="java.lang.String" default="Username:"/>
+		<composite:attribute name="passwordLabel" type="java.lang.String" default="Password"/>
+		<composite:attribute name="submitLabel" type="java.lang.String" default="Login"/>
+	</composite:interface>
+	<composite:implementation>
+		<h:outputStylesheet name="mytags/login.css" />
+		<h:form id="login_form" 
+		style="width: 250px; border-radius: 10px; padding: 5px;" 
+		styleClass="#{cc.attrs.styleClass}">
+			<fieldset>
+				<legend><h:outputText value="#{cc.attrs.caption}"/></legend>
+				<h:panelGrid border="0" columns="2">
+					<h:outputText value="#{cc.attrs.usernameLabel}"></h:outputText>
+					<h:inputText id="username" value="#{cc.attrs.username}"  
+						label="username">
+						<f:validateRegex pattern="\w{5,}"/>
+					</h:inputText>
+					<h:outputText value="#{cc.attrs.passwordLabel}"></h:outputText>
+					<h:inputSecret id="password" value="#{cc.attrs.password}"
+						required="true" label="password" >
+						<f:validateLength minimum="5" />
+					</h:inputSecret>
+				</h:panelGrid>
+				<h:commandButton id="login_command" value="#{cc.attrs.submitLabel}" 
+					action="#{cc.attrs.action}" type="submit"  />
+				<h:panelGrid columns="1">
+					<h:message for="username"
+						errorStyle="color:red;" layout="table" />
+					<h:message for="password"
+						errorStyle="color:red;" layout="table" />
+				</h:panelGrid>
+			</fieldset>
+		</h:form>
+	</composite:implementation>
+</body>
+</html>

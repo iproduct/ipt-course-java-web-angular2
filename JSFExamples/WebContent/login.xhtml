@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="title">
+	    JSF 2 Login Demo
+	</ui:define>
+	<ui:define name="content">
+		<!-- <f:loadBundle basename="login.login" var="loginMsg" />  -->
+		<h:form id="login_form">
+			<fieldset>
+				<legend>Login</legend>
+				<h:panelGrid border="0" columns="2">
+					<h:outputText value="Username:"></h:outputText>
+					<h:inputText id="username" value="#{loginBean.username}" 
+						validatorMessage="#{loginMsg['login.validation.USERNAME_PATTERN']}">
+						<f:validateRegex pattern="\w{5,}" />
+					</h:inputText>
+					<h:outputText value="Password"></h:outputText>
+					<h:inputSecret id="password" value="#{loginBean.password}" required="true" >
+						<f:validateLength minimum="5" />
+					</h:inputSecret>
+				</h:panelGrid>
+				<h:commandButton value="Login" action="#{loginBean.nextView}"></h:commandButton>
+			</fieldset>
+		</h:form>
+		<h:messages errorStyle="color:red;" layout="table" />
+	</ui:define>
+</ui:composition>
+</html>

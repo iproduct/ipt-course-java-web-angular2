@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<h:form id="form1">
+		<p>
+			Hello,
+			<h:outputText value="#{hello.hello}" />
+		</p>
+		<p>My name is #{hello.hello}</p>
+		<p>
+			Your name:
+			<h:inputText id="name" value="#{hello.name}" />
+			.
+		</p>
+		<p>
+			Your age:
+			<h:inputText label="Age" id="age" value="#{hello.age}">
+				<f:validateLongRange minimum="0" maximum="120" />
+			</h:inputText>
+			<h:message for="age" showDetail="false" showSummary="true"
+				style="color:red;" />
+		</p>
+		<h:commandButton id="submit" value="Set Name" action="#{hello.submit}" />
+		<h:inputText id="in" value="#{listenBean.hello}" autocomplete="off">
+			<f:ajax event="keyup" render="out count eventcount"
+				listener="#{listenBean.update}" />
+		</h:inputText>
+		<h:commandButton id="button1" value="Show/Hide"
+			onclick="jsf.ajax.request(this, event, {execute: 'button1', render: 'pg1'}); return false;"
+			actionListener="#{hidenshow.toggle}" />
+	</h:form>
+</h:body>
+</html>
+

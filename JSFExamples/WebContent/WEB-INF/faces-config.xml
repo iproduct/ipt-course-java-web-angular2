@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>login.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>username</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>Anonimous</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>loginClient.xhtml</display-name>
+		<from-view-id>/loginClient.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logged</from-outcome>
+			<to-view-id>/welcome.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logged</from-outcome>
+			<to-view-id>/welcome.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>welcome.xhtml</display-name>
+		<from-view-id>/welcome.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<application>
+		<message-bundle>login.Messages</message-bundle>
+   <!--      <el-resolver>jsf.util.JsfCrudELResolver</el-resolver>--> 
+        <locale-config>
+        	<default-locale>en</default-locale>
+        	<supported-locale>bg</supported-locale>
+        </locale-config>
+        <resource-bundle>
+        	<base-name>login.login</base-name>
+        	<var>loginMsg</var>
+        </resource-bundle> 
+    </application>
+ 	<!--  <lifecycle>
+        <phase-listener>
+            enterprise.jsf_jpa_war.AuthenticationPhaseListener
+        </phase-listener>
+    </lifecycle> 
+    <converter>
+        <converter-for-class>jpa.entities.DiscountCode</converter-for-class>
+        <converter-class>jsf.DiscountCodeConverter</converter-class>
+    </converter>-->
+    <validator>
+    	<display-name>login.LoginValidator</display-name>
+    	<validator-id>loginValidator</validator-id>
+    	<validator-class>login.LoginValidator</validator-class>
+    	<attribute>
+    		<attribute-name>minimum</attribute-name>
+    		<attribute-class>Integer</attribute-class>
+    		<default-value>0</default-value>
+    	</attribute>
+    </validator>
+</faces-config>

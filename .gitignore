@@ -34,3 +34,5 @@ typings
 # Optional REPL history
 .node_repl_history
 /ipt-poling-demo/target/
+/simple-login-nb/simple-login/nbproject/private/
+/simple-login-nb/simple-login/build/

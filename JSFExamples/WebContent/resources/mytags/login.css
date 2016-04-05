@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+.login_form {
+	width: 250px;
+	background-color: #cccccc;
+	border-radius: 10px;
+	padding: 5px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:component>
+	<h:outputStylesheet name="css/product.css"></h:outputStylesheet>
+	<div class="product">
+		<h:graphicImage class="picture" 
+			value="#{resource['image:'.concat(productParam.pictureUrl)]}"/>
+		<div class="product_data">
+			<h:panelGrid class="product_table" columns="3" columnClasses="c1,c2,c3">
+				<h:outputText value="#{productParam.name}" />
+				<h:outputText value="#{productParam.vendor}" />
+				<h:outputText value="\$#{productParam.price}" />
+			</h:panelGrid>
+			<div class="description">
+				<h:outputText value="#{productParam.description}" />
+			</div>
+		</div>
+	</div>
+</ui:component>
+</html>
