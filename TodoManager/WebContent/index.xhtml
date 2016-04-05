@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="title">
+	    Todo Manager 2
+	</ui:define>
+	<ui:define name="content">
+		<h2 class="section_heading">
+		<h:outputText value="#{msg['todomanager.SUBTITLE']}" />
+		</h2>
+		<h:form id="add_todo_form">
+			<h:commandButton value="#{msg['todomanager.ADD_TODO']}" action="#{todoManagerBean.addNewTodo}"
+			 accesskey="n" binding="#{todoManagerBean.addCommand}"/>
+			<h:panelGrid columns="2" id="add_todo_table" 
+				rendered="false" binding="#{todoManagerBean.addTodoPanel}">
+				<h:outputText value="#{msg['todomanager.TITLE']}:" />
+				<h:inputText  label="#{msg.todomanager.TITLE}" 
+					value="#{todoManagerBean.todo.title}" required="true" 
+					requiredMessage=
+						"#{languageBean.getLocalized('todomanager.REQUIRED','todomanager.TITLE')}" >
+					<f:validateLength minimum="3" maximum="60"/>
+				</h:inputText>
+				<h:outputText value="Description:" />
+				<h:inputTextarea  label="Description" value="#{todoManagerBean.todo.description}" />
+				<h:outputText value="Priority:" />
+				<h:selectOneMenu  label="Priority" value="#{todoManagerBean.todo.priority}">
+					<f:selectItems value="#{todoManagerBean.priorities}"/>
+				</h:selectOneMenu>
+				<h:outputText value="Due date:" />
+				<h:inputText id="due_date" label="Due date" 
+					value="#{todoManagerBean.todo.dueDate}">
+					<f:convertDateTime pattern="dd.MM.yyyy" />
+				</h:inputText>
+				<h:commandButton value="Save" action="#{todoManagerBean.save}"/>
+				<h:commandButton value="Cancel" action="#{todoManagerBean.cancel}"
+					immediate="true" />
+			</h:panelGrid>
+		</h:form>
+		<h:form id="todo_details_form">
+			<h:panelGrid id="show_hide_details" columns="2">
+				<h:commandLink id="show_details" value="Show todos"
+					actionListener="#{todoManagerBean.displayDetails}">
+				</h:commandLink>
+				<h:commandLink id="hide_details" value="Hide todos"
+					actionListener="#{todoManagerBean.displayDetails}">
+				</h:commandLink>
+			</h:panelGrid>
+			<h:dataTable id="todo_details_table" binding="#{todoManagerBean.dataTable}"
+				value="#{todoManagerBean.allTodos}" var="todo"
+				headerClass="todos_header" styleClass="todos" columnClasses="first,rest"
+				rowClasses="odd, even">
+				<h:column>
+					<f:facet name="header">Priority</f:facet>
+					<h:outputText value="#{msg[todo.priority]}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					<h:outputText value="#{todo.title}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+					<h:outputText value="#{todo.description}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Due Date</f:facet>
+					<h:outputText value="#{todo.dueDate}">
+						<f:convertDateTime pattern="dd.MM.yyyy" />
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Actions</f:facet>
+					<h:commandButton value="Delete" action="#{todoManagerBean.delete}">
+						<f:setPropertyActionListener 
+							target="#{todoManagerBean.todo}" value="#{todo}" />
+					</h:commandButton>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+		<h:messages styleClass="message" infoClass="info_message" layout="table"/>
+	</ui:define>
+</ui:composition>
+</html>

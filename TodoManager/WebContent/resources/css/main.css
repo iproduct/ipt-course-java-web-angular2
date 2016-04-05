@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family:'New Century Schoolbook', serif;
+}
+#header {
+	width: 100%;
+	font-size: 36px;
+	line-height: 48px;
+	background-color: #030;
+	color: white;
+	text-align: center;
+}
+
+#footer {
+	background-color: #030;
+	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+.section_heading {
+	text-align: center;
+}
+
+#add_todo_form input[type="text"],
+#add_todo_form textarea {
+	width: 200px;
+}
+
+.todos_header {
+	background-color: #030;
+	color:white;
+}
+
+.todos {
+	background-color: #BFF2BF;
+	border: 1px solid green;
+}
+
+ td {
+	background-color: white;
+}
+
+.todos .first {
+	font-weight: bold;
+	text-align: center;
+}
+
+.todos .odd td{
+	background-color: #fd8;
+}
+
+.todos .even td{
+	background-color: #B2D1B2;
+}
+
+.message {
+	color:red;
+}
+
+.info_message {
+	color:green;
+}
