@@ -36,3 +36,7 @@ typings
 /ipt-poling-demo/target/
 /simple-login-nb/simple-login/nbproject/private/
 /simple-login-nb/simple-login/build/
+/jsf-examples-nb/JSFExamples/nbproject/private/
+/jsf-examples-nb/JSFExamples/build/
+/todo-manager-nb/TodoManager/nbproject/private/
+/todo-manager-nb/TodoManager/build/

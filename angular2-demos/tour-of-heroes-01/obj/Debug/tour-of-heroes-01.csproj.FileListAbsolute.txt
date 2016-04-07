@@ -1,0 +1,11 @@
+C:\CourseAngular2\VC_Workspace\angular2-demos\tour-of-heroes-01\bin\tour-of-heroes-01.dll.config
+C:\CourseAngular2\VC_Workspace\angular2-demos\tour-of-heroes-01\bin\tour-of-heroes-01.dll
+C:\CourseAngular2\VC_Workspace\angular2-demos\tour-of-heroes-01\bin\tour-of-heroes-01.pdb
+C:\CourseAngular2\VC_Workspace\angular2-demos\tour-of-heroes-01\obj\Debug\tour-of-heroes-01.csprojResolveAssemblyReference.cache
+C:\CourseAngular2\VC_Workspace\angular2-demos\tour-of-heroes-01\obj\Debug\tour-of-heroes-01.dll
+C:\CourseAngular2\VC_Workspace\angular2-demos\tour-of-heroes-01\obj\Debug\tour-of-heroes-01.pdb
+C:\CourseAngular2\git\Course-Angular-2\angular2-demos\tour-of-heroes-01\bin\tour-of-heroes-01.dll.config
+C:\CourseAngular2\git\Course-Angular-2\angular2-demos\tour-of-heroes-01\bin\tour-of-heroes-01.dll
+C:\CourseAngular2\git\Course-Angular-2\angular2-demos\tour-of-heroes-01\bin\tour-of-heroes-01.pdb
+C:\CourseAngular2\git\Course-Angular-2\angular2-demos\tour-of-heroes-01\obj\Debug\tour-of-heroes-01.dll
+C:\CourseAngular2\git\Course-Angular-2\angular2-demos\tour-of-heroes-01\obj\Debug\tour-of-heroes-01.pdb

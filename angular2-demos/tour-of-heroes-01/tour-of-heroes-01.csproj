@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{804E1656-B499-4974-9689-A10CEFCFF128}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\dashboard.component.css" />
+    <Content Include="app\dashboard.component.html" />
+    <Content Include="app\hero-detail.component.css" />
+    <Content Include="app\hero-detail.component.html" />
+    <Content Include="app\hero-form.component.html" />
+    <Content Include="app\heroes.component.css" />
+    <Content Include="app\heroes.component.html" />
+    <Content Include="forms.css" />
+    <Content Include="styles.css" />
+    <Content Include="app\app.css" />
+    <Content Include="index.html" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\click-me.component.ts" />
+    <TypeScriptCompile Include="app\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\hero-data.ts" />
+    <TypeScriptCompile Include="app\hero-form.component.ts" />
+    <TypeScriptCompile Include="app\hero-mockup.service.ts" />
+    <TypeScriptCompile Include="app\heroes.component.ts" />
+    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="app\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\hero.service.ts" />
+    <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\interaction\astronaut.component.ts" />
+    <TypeScriptCompile Include="app\interaction\hero-child.component.ts" />
+    <TypeScriptCompile Include="app\interaction\hero-master.component.ts" />
+    <TypeScriptCompile Include="app\interaction\mission-control.component.ts" />
+    <TypeScriptCompile Include="app\interaction\mission.service.ts" />
+    <TypeScriptCompile Include="app\interaction\version-child.component.ts" />
+    <TypeScriptCompile Include="app\interaction\version-parent.component.ts" />
+    <TypeScriptCompile Include="app\interaction\vote-taker.componet.ts" />
+    <TypeScriptCompile Include="app\interaction\voter.component.ts" />
+    <TypeScriptCompile Include="app\logger.service.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\mock-heroes.ts" />
+    <TypeScriptCompile Include="app\hero-http.service.ts" />
+    <TypeScriptCompile Include="app\pipes\hero-async-message.component.ts" />
+    <TypeScriptCompile Include="app\wiki\wiki.component.ts" />
+    <TypeScriptCompile Include="app\wiki\wikipedia.service.ts" />
+    <TypeScriptCompile Include="shared\directives\email-validator.directive.ts" />
+    <TypeScriptCompile Include="shared\directives\tooltip.directive.ts" />
+    <TypeScriptCompile Include="shared\directives\log-on-click.directive.ts" />
+    <TypeScriptCompile Include="shared\Pipes\exponential-strength.pipe.ts" />
+    <TypeScriptCompile Include="shared\Validators\username.validator.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
+    <Content Include="package.json" />
+    <TypeScriptCompile Include="app\router-config.ts" />
+    <Content Include="app\heroes.json" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>tour_of_heroes_01</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20066</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20066/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

@@ -8,11 +8,12 @@
 
 <ui:component>
 	<h:outputStylesheet name="css/product.css"></h:outputStylesheet>
-	<div class="product">
+        <h:panelGroup class="product" rendered="#{productParam.price > 20}" layout="block">
 		<h:graphicImage class="picture" 
 			value="#{resource['image:'.concat(productParam.pictureUrl)]}"/>
-		<div class="product_data">
-			<h:panelGrid class="product_table" columns="3" columnClasses="c1,c2,c3">
+                <h:panelGroup class="product_data" >
+			<h:panelGrid class="product_table" columns="3" columnClasses="c1,c2,c3"
+                                     rowClasses="r1,r2">
 				<h:outputText value="#{productParam.name}" />
 				<h:outputText value="#{productParam.vendor}" />
 				<h:outputText value="\$#{productParam.price}" />
@@ -20,7 +21,7 @@
 			<div class="description">
 				<h:outputText value="#{productParam.description}" />
 			</div>
-		</div>
-	</div>
+                </h:panelGroup>
+        </h:panelGroup>
 </ui:component>
 </html>

@@ -1,0 +1,142 @@
+﻿<html>
+<head>
+    <base href="/">
+    <title>Angular 2 QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="forms.css">
+
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/a2-in-memory-web-api/web-api.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                shared: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+        }
+        });
+        System.import('app/main')
+              .then(null, console.error.bind(console));
+    </script>
+</head>
+
+<!-- 3. Display the application -->
+<body>
+    <my-app>Loading...</my-app>
+
+    <script>
+        var myZoneSpec = {
+        beforeTask: function () {
+        console.log('Before task');
+        },
+        afterTask: function () {
+        console.log('After task');
+        }
+        };
+
+        var myZone = zone.fork(myZoneSpec);
+        myZone.run(main);
+    </script>
+
+<!--
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button"
+onclick="loadDoc('http://10.1.1.183:8080/ipt_polling/app/polls/', myFunction)">Change Content
+</button>
+
+<script>
+function loadDoc(url, cfunc) {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      cfunc(xhttp);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.setRequestHeader("Accept", "application/json");
+  xhttp.send();
+}
+function myFunction(xhttp) {
+  document.getElementById("demo").innerHTML = xhttp.responseText;
+}
+    </script>
+    -->
+
+<!--<button>Hello, world!</button>
+<script>
+    var host = document.querySelector('button');
+    var root = host.createShadowRoot();
+    root.textContent = 'こんにちは、影の世界!';
+</script>
+
+<div data-name="George" id="nameTag"><b>Hi</b>Samuel</div>
+<template id="nameTagTemplate">
+    <style>
+        :host:hover::shadow .outer {
+            background: green;
+        }
+
+        .outer {
+            border: 2px solid brown;
+            border-radius: 1em;
+            background: red;
+            font-size: 20pt;
+            width: 12em;
+            height: 7em;
+            text-align: center;
+        }
+
+        .boilerplate {
+            color: white;
+            font-family: sans-serif;
+            padding: 0.5em;
+        }
+
+        .name {
+            color: black;
+            background: white;
+            font-family: "Marker Felt", cursive;
+            font-size: 45pt;
+            padding-top: 0.2em;
+        }
+    </style>
+    <div class="outer">
+        <div class="boilerplate">
+            Hi! My name is
+        </div>
+        <div class="name">
+            <content></content>
+        </div>
+    </div>
+</template>
+<script>
+    var shadow = document.querySelector('#nameTag').createShadowRoot();
+    var template = document.querySelector('#nameTagTemplate');
+    var clone = document.importNode(template.content, true);
+    shadow.appendChild(clone);
+</script>-->
+</body>
+</html>
