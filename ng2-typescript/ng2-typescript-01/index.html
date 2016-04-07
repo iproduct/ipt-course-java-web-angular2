@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="./bower_components/system.js/dist/system.js"></script>
+</head>
+<body>
+    <h1>TypeScript HTML App</h1>
+    <script>
+        System.config({
+            baseURL: '/',
+            "defaultJSExtensions": true
+        });
+        // loads /app.js
+        System.import('mixins.js').then(null, console.error.bind(console));
+    </script>
+
+    <div id="content"></div>
+</body>
+</html>

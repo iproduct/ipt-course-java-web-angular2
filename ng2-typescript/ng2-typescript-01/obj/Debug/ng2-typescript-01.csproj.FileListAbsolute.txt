@@ -1,0 +1,5 @@
+C:\CourseAngular2\VC_Workspace\ng2-typescript\ng2-typescript-01\bin\ng2-typescript-01.dll.config
+C:\CourseAngular2\VC_Workspace\ng2-typescript\ng2-typescript-01\bin\ng2-typescript-01.dll
+C:\CourseAngular2\VC_Workspace\ng2-typescript\ng2-typescript-01\bin\ng2-typescript-01.pdb
+C:\CourseAngular2\VC_Workspace\ng2-typescript\ng2-typescript-01\obj\Debug\ng2-typescript-01.dll
+C:\CourseAngular2\VC_Workspace\ng2-typescript\ng2-typescript-01\obj\Debug\ng2-typescript-01.pdb
